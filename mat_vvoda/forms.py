@@ -1,8 +1,9 @@
 from django import forms
 from .models import *
 
-class СoefficientForm(forms.ModelForm):
+class CoefficientForm(forms.ModelForm):
 
-	class Meta:
-		model = Сoefficient
-		exclude = [""]
+    class Meta:
+        model = Coefficient
+        exclude = [""]
+

@@ -1,8 +1,19 @@
 from django.db import models
 
-class Сoefficient(models.Model):
+class Author(models.Model):
+    name = models.CharField(max_length = 128)
+    email = models.EmailField()
+    
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Проектировщики"
+        verbose_name_plural = "Проектировщики"
+
+class Coefficient(models.Model):
     address = models.CharField(max_length = 128)
-    name_author = models.CharField(max_length = 128)
+    author = models.ForeignKey('Author', related_name = 'coefficients', on_delete = models.CASCADE)
     diameter_PPU = models.IntegerField()
     vvoda_PPU = models.IntegerField()
     nopora_PPU = models.IntegerField()
@@ -36,8 +47,21 @@ class Сoefficient(models.Model):
     sil_IZOP = models.IntegerField()
 
     def __str__(self):
-        return "Данные по адресу: %s" % (self.address)
+        return self.address
 
     class Meta:
         verbose_name = "Коэффициенты"
         verbose_name_plural = "Коэффициенты"
+
+class Results(models.Model):
+    address = models.CharField(max_length = 128)
+    result_CO2_1 = models.TextField()
+    result_CO2_2 = models.TextField()
+
+    def __str__(self):
+        return str(self.address)
+
+    class Meta:
+        verbose_name = "Результаты"
+        verbose_name_plural = "Результаты"
+

@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <title>Коэффициенты</title>
-
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Oscar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    
-    <h3>Для расчета строительной части</h3>
-    <h3>заполни все поля</h3>
-    <div>
-    	<form action = "" method = "post">{% csrf_token %}
-    	{{ form.as_p }}
-    	<div>
-    		<button type = "submit">Отправить/Рассчитать</button>
-    	</div>
+    <div id="root"> 
     </div>
-
+    {% load static %}
+    <script src="{% static 'mat_vvoda/output-oskar.js' %}">   
+    </script>
 </body>
 </html>

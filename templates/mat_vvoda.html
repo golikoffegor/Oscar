@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Коэффициенты</title>
+
+</head>
+<body>
+    
+    <h3>Для расчета строительной части</h3>
+    <h3>заполни все поля</h3>
+
+    <div>
+        
+        <form action = "" method = "post">{% csrf_token %}
+        {{ form.as_p }}
+
+        <div>
+            <button type = "submit">Отправить/Рассчитать</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
